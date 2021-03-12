@@ -23,11 +23,14 @@ body {
 .fight {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
-.square {
-    background-color: blue;
-    min-width: 250px;
-    min-height: 250px;
+.playerAction, .computerAction {
+    margin: 50px;
+}
+
+.pierre {
+    border: black solid 2px;
 }
