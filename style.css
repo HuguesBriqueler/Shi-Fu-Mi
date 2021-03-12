@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #222;
+}
+
+body {
+    max-width: 800px;
+    background-color: grey;
+    margin: auto;
+;
+}
+
+.selectAction {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.fight {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.square {
+    background-color: blue;
+    min-width: 250px;
+    min-height: 250px;
+}
