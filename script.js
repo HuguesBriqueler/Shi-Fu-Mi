@@ -14,8 +14,8 @@ const gameInit = function() {
     while(nombreDeManches%2 === 0) {
         nombreDeManches = parseInt(prompt("Combien de manches voulez vous jouer ?  (Entrez un nombre impair)"));
     }
-    document.querySelector(".playerAction").src="./Board.png";
-    document.querySelector(".computerAction").src="./Board.png";
+    document.querySelector(".playerAction").style.backgroundImage = getPicture(4);
+    document.querySelector(".computerAction").style.backgroundImage = getPicture(4);
     displayScores();
 }
 
@@ -44,8 +44,6 @@ const displayWinner = function(winner) {
     document.querySelector(".scoreTitle").innerHTML = `Scores : ${winner} Win !`;
 }
 
-gameInit();
-
 pierre.addEventListener("click",function clickPierre() {
     whatIsClicked(1);
 });
@@ -59,8 +57,8 @@ ciseaux.addEventListener("click",function clickCiseaux() {
 const whatIsClicked = function(clickStatus) {
     let computerChoice = Math.floor(Math.random() * 3 + 1);
 
-    document.querySelector(".playerAction img").src = getPicture(clickStatus);
-    document.querySelector(".computerAction img").src = getPicture(computerChoice);
+    document.querySelector(".playerAction").style.backgroundImage = getPicture(clickStatus);
+    document.querySelector(".computerAction").style.backgroundImage = getPicture(computerChoice);
 
     if (computerChoice===clickStatus) {
         displayWinner("Nobody");
@@ -80,16 +78,18 @@ const whatIsClicked = function(clickStatus) {
 const getPicture = function(pictureNumber) {
     switch (pictureNumber) {
         case 1 :
-            return("./Pierre.png");
+            return("url(./Pierre.png)");
             break;
         case 2 :
-            return("./Feuille.png");
+            return("url(./Feuille.png)");
             break;
         case 3 :
-            return("./Ciseaux.png");
+            return("url(./Ciseaux.png)");
             break;
         default :
-            return("./Board.png");
+            return("url(./Board.png)");
             break;
     }
 }
+
+gameInit();

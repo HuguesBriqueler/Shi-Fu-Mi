@@ -29,8 +29,8 @@ body {
 
 .playerAction, .computerAction {
     margin: 50px;
-}
-
-.pierre {
-    border: black solid 2px;
+    width: 150px;
+    height: 137px;
+    background-image: url(./Board.png);
+    background-size: cover;
 }
