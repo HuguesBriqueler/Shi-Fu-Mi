@@ -58,7 +58,10 @@ ciseaux.addEventListener("click",function clickCiseaux() {
 
 const whatIsClicked = function(clickStatus) {
     let computerChoice = Math.floor(Math.random() * 3 + 1);
-    console.log(computerChoice);
+
+    document.querySelector(".playerAction img").src = getPicture(clickStatus);
+    document.querySelector(".computerAction img").src = getPicture(computerChoice);
+
     if (computerChoice===clickStatus) {
         displayWinner("Nobody");
     } else if (computerChoice-1 === clickStatus || (computerChoice===1 && clickStatus===3)){
@@ -74,12 +77,19 @@ const whatIsClicked = function(clickStatus) {
     displayScores();
 }
 
-
-/*
-while (uneAutrePartie === "O") {
-    nombreDeManches = parseInt(prompt("Combien de manches voulez vous jouer ?"));
-    while (clickStatus === 0) {
-        clickStatus
+const getPicture = function(pictureNumber) {
+    switch (pictureNumber) {
+        case 1 :
+            return("./Pierre.png");
+            break;
+        case 2 :
+            return("./Feuille.png");
+            break;
+        case 3 :
+            return("./Ciseaux.png");
+            break;
+        default :
+            return("./Board.png");
+            break;
     }
 }
-*/
